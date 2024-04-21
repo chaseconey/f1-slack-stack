@@ -1,5 +1,7 @@
 # f1-slack-stack
 
+A scheduled lambda that posts next F1 race information into a configured Slack channel.
+
 ## Deploy
 
 This application uses AWS SAM to package, build and deploy this application. Once you have the sam CLI installed, run:
@@ -8,6 +10,18 @@ This application uses AWS SAM to package, build and deploy this application. Onc
 sam build
 sam deploy
 ```
+
+### Configuring Slack
+
+In order to post to slack, you will need to create a Slack application. A basic shell of an app will work just fine.
+
+Once you have that, you can simply create a webhook under the `Incoming Webhooks` tab. The URL that it gives you is the url that you will need to configure in the SAM template.
+
+To add the environment variable, go to the `template.yml` in the root of the directory, and update the `SLACK_WEBHOOK_URL` to the url generated above.
+
+**Other Environment Variables**
+
+- `DISPLAY_TZ` - this is the timezone that the data is formatted for
 
 ## Testing
 
