@@ -21,7 +21,7 @@ To add the environment variable, go to the `template.yml` in the root of the dir
 
 **Other Environment Variables**
 
-- `DISPLAY_TZ` - this is the timezone that the data is formatted for
+- `DISPLAY_TZ` - this is the timezone that the data is formatted for (default: `America/New York`)
 
 ## Testing
 
