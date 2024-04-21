@@ -4,6 +4,16 @@ A scheduled lambda that posts next F1 race information into a configured Slack c
 
 ![](./screenshot.png)
 
+## How It Works
+
+This application functions as a bot that will parse a bunch of Formula 1 race information to determine if an upcoming race is upon us.
+
+There is a set of data that is embedded ([events.json](./src/events.json)) that is used to determine the race calendar for the season. This data is parsed from an amazing site that you should check out: https://lightsouts.com/formula-1.
+
+By default, the Lambda will run every week on Monday to see if there is a race in the next 7 days. If a race is found, it will submit the information about the race into the Slack channel that you have configured.
+
+That's it! Enjoy! ❤️
+
 ## Deploy
 
 This application uses AWS SAM to package, build and deploy this application. Once you have the sam CLI installed, run:
