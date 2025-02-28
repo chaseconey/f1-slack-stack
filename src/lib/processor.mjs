@@ -1,14 +1,13 @@
-// Import events.json file
 import _ from "lodash";
 import "dotenv/config";
 import axios from "axios";
 import { parseLightsoutDate } from "./utils.mjs";
 
 export default async function run(events) {
-  // Find the first event that has a startDate in the next 7 days, and where startDate is not in the past
   const now = new Date();
   const nextWeek = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
 
+  // Find the first event that has a startDate in the next 7 days, and where startDate is not in the past
   const event = _.find(events, (event) => {
     const startDate = new Date(event.startDate);
 
