@@ -96,7 +96,7 @@ export default async function run(events) {
               text: ":trophy: Race Results",
               emoji: true,
             },
-            url: "https://www.formula1.com/en/results.html/2024/races.html",
+            url: "https://www.formula1.com/en/results.html/2025/races.html",
           },
           {
             type: "button",
