@@ -21,7 +21,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Description: A scheduled lambda that posts next F1 race information into a configured Slack channel.
-      Runtime: nodejs20.x
+      Runtime: nodejs24.x
       Architectures:
         - x86_64
       Handler: src/handlers/index.postNextRace
@@ -32,7 +32,7 @@ Resources:
           Type: Schedule
           Properties:
             Schedule: cron(0 0 ? * MON *)
-      MemorySize: 128
+      MemorySize: 256
       Timeout: 30
       Environment:
         Variables:
